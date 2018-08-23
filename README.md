@@ -7,6 +7,13 @@ FEND final project!
 Neighborhood Map is an app that lets you find the best cafes in Wroclaw, Poland.
 Here you can see their location on the map, search for particular ones and check their exact adress!
 
+## How to run?
+- clone or download the repository
+- go to command line
+- change directory to the downloaded project directory
+- `npm install`
+- `npm start`
+
 ## Attribution
 #### Google Maps API:
 You're supposed to add your own Google Maps API key here (MapContainer.js, line 35):
