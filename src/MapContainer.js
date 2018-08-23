@@ -54,7 +54,6 @@ class MapContainer extends Component {
         title: this.state.locations[i].name,
         animation: window.google.maps.Animation.DROP
       })
-      //marker.setMap(map);
 
       //taking coordinates from location;
       //they're differently formatted to work well with fetching data from Foursquare
