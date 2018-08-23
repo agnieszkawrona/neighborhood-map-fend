@@ -1,28 +1,192 @@
+html, body, .root {
+  height: 100%;
+}
+
+body, .app {
+  background: white;
+}
+
 .App {
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.SidePanel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 25%;
+  left: 0px;
+  background-color: #000;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.SidePanel button {
+  width: 80%;
+  align-self: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+.side-title {
+  color: #fff;
+  font: bold 20px Arial;
+  padding: 6px 6px 6px 6px;
 }
 
-.App-intro {
-  font-size: large;
+.SearchBox {
+  display: flex;
+  width: 90%;
+  height: 40px;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input {
+  width: inherit;
+  border: 1px solid #d1d1d1;
+  font: bold 16px Arial;
+  padding: 6px 15px 6px 35px;
+  border-radius: 20px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+}
+
+.ListView {
+  text-align: left;
+  color:#fff;
+}
+
+.ListView ul {
+  list-style: none;
+  left: 0px;
+  align-self: left;
+  width:inherit;
+}
+
+.MapContainer {
+  height: 100%;
+  width:100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+
+.MapContainer .foursquare-attribution {
+    font: bold italic 10px Arial;
+}
+
+#map {
+  height: 100%;
+  width: 75%;
+  right:0px;
+}
+
+@media screen and (max-width: 800px) {
+
+  .SidePanel {
+    height: 300px;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  .SidePanel button {
+    align-self: center;
+  }
+
+  .side-title {
+    font: bold 20px Arial;
+    text-align: center;
+    padding: 6px 6px 6px 6px;
+  }
+
+  .SearchBox {
+    align-self: center;
+    width: 90%;
+    height: 40px;
+    justify-content: space-around;
+    top: 0px;
+  }
+
+  .ListView {
+    text-align: left;
+    color:#fff;
+    align-items: left;
+    font: 16px Arial;
+  }
+
+  .ListView ul {
+    list-style: none;
+    left: 0px;
+    align-self: left;
+    width:inherit;
+  }
+
+  .MapContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #map {
+    height: 75%;
+    width:100%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .App {
+    min-width: 400px;
+  }
+
+  .SidePanel {
+    height: 250px;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  .SidePanel button {
+    align-self: center;
+  }
+
+  .side-title {
+    font: bold 16px Arial;
+    text-align: center;
+    padding: 6px 6px 6px 6px;
+  }
+
+  .SearchBox {
+    align-self: center;
+    width: 90%;
+    height: 20px;
+    justify-content: space-around;
+    top: 0px;
+  }
+
+  .ListView {
+    text-align: left;
+    color:#fff;
+    align-items: left;
+    font: 12px Arial;
+  }
+
+  .ListView ul {
+    list-style: none;
+    left: 0px;
+    align-self: left;
+    width:inherit;
+  }
+
+  .MapContainer {
+    min-width: 400px;
+  }
+
+  #map {
+    height: 75%;
+    width: 100%;
+  }
+
 }
