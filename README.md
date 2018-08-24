@@ -17,10 +17,10 @@ Here you can see their location on the map, search for particular ones and check
 ## Attribution
 #### Google Maps API:
 You're supposed to add your own Google Maps API key here (MapContainer.js, line 35):
-`componentDidMount() {
-    loadScript("https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&v=3&callback=initMap")
-    window.initMap = this.initMap
-  }`
+`componentDidMount()`{\
+`   loadScript("https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&v=3&callback=initMap")`\
+`   window.initMap = this.initMap`\
+`}`\
   
 #### Foursquare API:
 The data (address) of a cafe displayed in a marker's infowindow are fetched from Foursquare
@@ -32,7 +32,6 @@ In order to do that, run:
 For more info check:
 - https://reactjs.org/docs/optimizing-performance.html
 - https://react-server.io/docs/guides/production
-- 
 
 ## Dependencies
 - axios: https://www.npmjs.com/package/axios
