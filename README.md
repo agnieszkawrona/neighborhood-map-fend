@@ -25,6 +25,15 @@ You're supposed to add your own Google Maps API key here (MapContainer.js, line 
 #### Foursquare API:
 The data (address) of a cafe displayed in a marker's infowindow are fetched from Foursquare
 
+#### Offline
+By default, the create-react-app includes a service worker in the production build.
+In order to do that, run:
+- `npm run build`
+For more info check:
+- https://reactjs.org/docs/optimizing-performance.html
+- https://react-server.io/docs/guides/production
+- 
+
 ## Dependencies
 - axios: https://www.npmjs.com/package/axios
 - react: https://www.npmjs.com/package/react
