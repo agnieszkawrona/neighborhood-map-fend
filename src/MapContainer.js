@@ -5,7 +5,7 @@ import escapeRegExp from 'escape-string-regexp'
 import axios from 'axios'
 
 //source: https://github.com/elharony/Udacity-P8-Neighborhood-Map-Project-Explained/blob/master/src/App.js
-//creates a script element that allows using a Google Maps API key
+//create a script element that allows using a Google Maps API key
 function loadScript(url) {
   var index = window.document.getElementsByTagName("script")[0]
   var script = window.document.createElement("script")
@@ -33,6 +33,10 @@ class MapContainer extends Component {
   componentDidMount() {
     loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRX8bGhgEL2wjzo15bHKO_mpRp3z2L3c&v=3&callback=initMap")
     window.initMap = this.initMap
+    //https://developers.google.com/maps/documentation/javascript/events#auth-errors
+    window.gm_authFailure = function() {
+      alert('Google maps failed to load! Check your API Key.')
+    } 
   }
 
   initMap = () => {
@@ -75,25 +79,25 @@ class MapContainer extends Component {
 
         marker.addListener('click', function () {
           infoWindow.setContent(locationInfo)
-          //opens infoWIndow after clicking on marker
+          //open infoWIndow after clicking on marker
           infoWindow.open(map, marker)
           //bouncing marker when clicked on
           if (marker.getAnimation() !== null) {
             marker.setAnimation(null);
           } else {
-            marker.setAnimation(window.google.maps.Animation.BOUNCE);
-            //stops the bouncing after 2 bounces
+            marker.setAnimation(window.google.maps.Animation.BOUNCE)
             setTimeout(function () {
               marker.setAnimation(null)
-              infoWindow.close()
             }, 800)
           }
         })
-      }).catch()
+      }).catch(error => {
+        alert('Foursquare failed to load! Some functions may not work. Check ClientID/Client secret.')
+      })
     })
   }
 
-  //filters the search results: both listview and markers
+  //filter the search results: both listview and markers
   filterLocations = (query) => {
     const { locations, markers } = this.state
     this.setState({ query })
@@ -128,7 +132,7 @@ class MapContainer extends Component {
           location={this.state.locations}
           searched={this.filterLocations.bind(this)}
         />
-        <div id="map" aria-label="map"></div>
+        <div id="map" aria-label="map" tabIndex="0"></div>
       </div>
     )
   }

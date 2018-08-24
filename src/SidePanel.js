@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 class SidePanel extends Component {
 
-  // function that activates the location marker, which name is passed
+  // activate the location marker, which name is passed
   activateLocation (locationName) {
     const { markers } = this.props
     markers.forEach(function (marker) {
@@ -14,9 +14,9 @@ class SidePanel extends Component {
   render() {
     const { query, searched, filteredPlaces } = this.props
     return (
-      <div className="SidePanel" aria-label="sidebar">
-        <div className="side-title" aria-label="Best Cafes in Wroclaw">Best Cafes in Wroclaw</div>
-        <div className="SearchBox" aria-label="searchbox">
+      <div className="SidePanel" aria-label="sidebar" role="menu">
+        <div className="side-title" aria-label="Best Cafes in Wroclaw" tabIndex="0">Best Cafes in Wroclaw</div>
+        <div className="SearchBox" aria-label="searchbox" tabIndex="0">
           <input
             type="text"
             placeholder="Search cafes..."
@@ -27,9 +27,9 @@ class SidePanel extends Component {
           />
         </div>
         <div className="ListView" aria-label="list of cafes">
-        <ul>
+        <ul role='listbox'>
           {filteredPlaces.map((location, index) => (
-            <li key={index}><button onClick={(event) => this.activateLocation(location.name)} aria-label="cafe button">{location.name}</button></li>
+            <li key={index}><button onClick={(event) => this.activateLocation(location.name)} aria-label="cafe button" role='listitem'>{location.name}</button></li>
           ))}
         </ul>
       </div>
